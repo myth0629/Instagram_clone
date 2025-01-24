@@ -12,14 +12,25 @@ import jakarta.persistence.GeneratedValue;
 @Entity
 @Getter
 @Setter
-
-public class  User{
+public class User{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; // PK
+    private long id;
 
-    private String username;
+    private String email;
     private String password;
     private String phone;
-    private String email;
+    private String username;
+    private String title;
+    private String website;
+    private String profileImgUrl;
+
+    public void update(String password,String phone, String username,String title,String website,String profileImgUrl){
+        this.password = password;
+        this.phone = phone;
+        this.username = username;
+        this.title = title;
+        this.website = website;
+        this.profileImgUrl = profileImgUrl;
+    }
 }
